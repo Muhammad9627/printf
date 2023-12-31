@@ -1,0 +1,6 @@
+# Ignore temp files
+\#*
+*~
+
+# Ignore compiled files
+*.out

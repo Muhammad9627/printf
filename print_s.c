@@ -12,32 +12,31 @@ int print_s(va_list val)
     int value;
 
     s = va_arg(val, char *);
-    if (s == NULL)
-        s = "(null)";
+    
+    if (s == NULL || val == NULL)
+        return (-1);
 
     for (i = 0; s[i] != '\0'; i++)
     {
-        switch (s[i] < 32 || s[i] >= 127)
+        if (s[i] < 32 || s[i] >= 127)
         {
-            case 1:
-                _putchar('\\');
-                _putchar('x');
-                len = len + 2;
-                value = s[i];
-                if (value < 16)
-                {
-                    _putchar('0');
-                    len++;
-                }
-                len = len + print_HEXA(value);
-                break;
-
-            case 0:
-                _putchar(s[i]);
+            _putchar('\\');
+            _putchar('x');
+            len = len + 2;
+            value = s[i];
+            if (value < 16)
+            {
+                _putchar('0');
                 len++;
-                break;
+            }
+            len = len + print_HEXA(val);
+        }
+        else
+        {
+            _putchar(s[i]);
+            len++;
         }
     }
 
-    return (len);
+    return (len + 1);
 }

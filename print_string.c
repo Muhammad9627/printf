@@ -9,7 +9,10 @@ int printf_string(va_list val)
     char *str;
     int MJ;
     int length;
+    
     str = va_arg(val,char *);
+    length = _strlen(str);
+    
     if (str == NULL)
     {
         str = "(NULL)";

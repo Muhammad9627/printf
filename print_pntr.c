@@ -22,6 +22,6 @@ int print_pntr(va_list val)
     a = (unsigned long int)p;
     _putchar('0');
     _putchar('x');
-    J = print_hex_e(a);
+    J = print_hex_ex(a);
     return (J + 2);
 }

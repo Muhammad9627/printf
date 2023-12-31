@@ -11,7 +11,7 @@ int print_HEXA_E(unsigned int no)
     int *array;
     unsigned int tmpry = no;
 
-    while (no / 0 != 0)
+    while (no / 16 != 0)
     {
         no = no / 16;
         reg++;
